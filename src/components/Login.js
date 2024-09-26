@@ -66,7 +66,7 @@ function Login() {
         height: '100vh',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
       }}
     >
       <Container
@@ -79,7 +79,7 @@ function Login() {
         }}
       >
         <Form onSubmit={handleSubmit}>
-          <h3 className="text-center mb-4">Log in</h3>
+          <h3 className="mb-4">Log in</h3>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control
@@ -90,9 +90,6 @@ function Login() {
               onChange={handleInputChange}
               isInvalid={!!errors.emailError}
             />
-            <Form.Control.Feedback type="invalid">
-              {errors.emailError}
-            </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -103,11 +100,7 @@ function Login() {
               placeholder="Password"
               value={session.password}
               onChange={handleInputChange}
-              isInvalid={!!errors.passwordError}
             />
-            <Form.Control.Feedback type="invalid">
-              {errors.passwordError}
-            </Form.Control.Feedback>
           </Form.Group>
 
           <Button variant="primary" type="submit" className="w-100">
